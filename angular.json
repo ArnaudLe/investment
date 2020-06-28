@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "investment"
+    }
+  },
+  "defaultProject": "investment",
+  "cli": {
+    "analytics": false
+  }
 }

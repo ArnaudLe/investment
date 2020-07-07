@@ -1,13 +1,11 @@
-<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
-  <div class="container">
-      <a class="navbar-brand">Menu</a>
-      <ul class="nav navbar-nav" routerLinkActive="active">
-          <li class="nav-item"><a class="nav-link" routerLink="home">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="loan">Capacité d'emprunt</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="monthly-payment">Calcul de mensualité</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink="real-estate-search">Recherche immobilière</a></li>
-      </ul>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
+<mat-tab-group [color]="'accent'" [backgroundColor]="'primary'">
+  <mat-tab label="Capacité d'emprunt">
+    <app-loan></app-loan>
+  </mat-tab>
+  <mat-tab label="Calcul mensualité">
+    <app-monthly-payment></app-monthly-payment>
+  </mat-tab>
+  <mat-tab label="Recherche immobilier">
+    <app-real-estate-search></app-real-estate-search>
+  </mat-tab>
+</mat-tab-group>

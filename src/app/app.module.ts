@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoanComponent } from './loan/loan.component';
 import { MonthlyPaymentComponent } from './monthly-payment/monthly-payment.component';
 import { RealEstateSearchComponent } from './real-estate-search/real-estate-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appRouteList: Routes = [
   {
@@ -46,7 +47,7 @@ export const appRouteList: Routes = [
     RealEstateSearchComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(appRouteList)
+    BrowserModule, RouterModule.forRoot(appRouteList), BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

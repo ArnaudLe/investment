@@ -11,6 +11,7 @@ import { LoanComponent } from './features/loan/loan.component';
 import { MonthlyPaymentComponent } from './features/monthly-payment/monthly-payment.component';
 import { RealEstateSearchComponent } from './features/real-estate-search/real-estate-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
 
 // export const appRouteList: Routes = [
 //   {
@@ -46,12 +47,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LoanComponent,
     MonthlyPaymentComponent,
-    RealEstateSearchComponent
+    RealEstateSearchComponent,
   ],
   imports: [
     BrowserModule, 
     // RouterModule.forRoot(appRouteList),
-     BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule
+     BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule, AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,10 +6,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoanComponent } from './loan/loan.component';
-import { MonthlyPaymentComponent } from './monthly-payment/monthly-payment.component';
-import { RealEstateSearchComponent } from './real-estate-search/real-estate-search.component';
+import { HomeComponent } from './public/home/home.component';
+import { LoanComponent } from './features/loan/loan.component';
+import { MonthlyPaymentComponent } from './features/monthly-payment/monthly-payment.component';
+import { RealEstateSearchComponent } from './features/real-estate-search/real-estate-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // export const appRouteList: Routes = [

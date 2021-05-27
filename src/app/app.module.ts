@@ -12,35 +12,34 @@ import { MonthlyPaymentComponent } from './features/monthly-payment/monthly-paym
 import { RealEstateSearchComponent } from './features/real-estate-search/real-estate-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './public/header/header.component';
 
-// export const appRouteList: Routes = [
-//   {
-//       path: 'home',
-//       component: HomeComponent
-//   },
-//   {
-//       path: 'loan',
-//       component: LoanComponent
-//   },
-//   {
-//     path: 'monthly-payment',
-//     component: MonthlyPaymentComponent
-//   },
-//   {
-//     path: 'real-estate-search',
-//     component: RealEstateSearchComponent
-//   },
-//   {
-//     path: '',
-//     redirectTo: '/home',
-//     pathMatch: 'full'
-//   },
-//   {
-//       path: '**',
-//       redirectTo: 'landing'
-//   }
-// ];
+export const appRouteList: Routes = [
+  {
+      path: 'home',
+      component: HomeComponent
+  },
+  {
+      path: 'loan',
+      component: LoanComponent
+  },
+  {
+    path: 'monthly-payment',
+    component: MonthlyPaymentComponent
+  },
+  {
+    path: 'real-estate-search',
+    component: RealEstateSearchComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+      path: '**',
+      redirectTo: 'landing'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -48,13 +47,12 @@ import { HeaderComponent } from './public/header/header.component';
     HomeComponent,
     LoanComponent,
     MonthlyPaymentComponent,
-    RealEstateSearchComponent,
-    HeaderComponent,
+    RealEstateSearchComponent
   ],
   imports: [
     BrowserModule, 
-    // RouterModule.forRoot(appRouteList),
-     BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule, AppRoutingModule,
+    RouterModule.forRoot(appRouteList),
+     BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule, AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

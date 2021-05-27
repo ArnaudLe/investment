@@ -12,6 +12,7 @@ import { MonthlyPaymentComponent } from './features/monthly-payment/monthly-paym
 import { RealEstateSearchComponent } from './features/real-estate-search/real-estate-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './header/header.component';
 
 export const appRouteList: Routes = [
   {
@@ -47,7 +48,8 @@ export const appRouteList: Routes = [
     HomeComponent,
     LoanComponent,
     MonthlyPaymentComponent,
-    RealEstateSearchComponent
+    RealEstateSearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule, 

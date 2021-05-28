@@ -1,4 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
 
 import { EmpruntPageComponent } from './emprunt-page.component';
 
@@ -8,7 +15,15 @@ describe('EmpruntPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmpruntPageComponent ]
+      declarations: [ EmpruntPageComponent ],
+      imports: [MatFormFieldModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        FlexLayoutModule,
+        MatCheckboxModule,
+        MatRadioModule,
+        MatSelectModule,
+        FormsModule]
     })
     .compileComponents();
   });
@@ -19,7 +34,8 @@ describe('EmpruntPageComponent', () => {
     fixture.detectChanges();
   });
 
-  test('should create', () => {
-    expect(component).toBeTruthy();
+  test('ngOnInit', () => {
+    expect(component.revenusEnumList).toBeDefined();
+    expect(component.revenusFormGroup).toBeDefined();
   });
 });

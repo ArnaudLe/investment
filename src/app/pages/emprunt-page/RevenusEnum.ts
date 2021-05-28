@@ -1,4 +1,5 @@
 export enum RevenusEnum {
-    SALAIRE = "Salaire",
-    REVENUS_LOCATIFS = "Revenus locatifs"
+    REVENU_LOCATIF = "Revenus locatifs",
+    PRIME = "Primes exceptionnelles",
+    AUTRE = "Autres revenus",
 }

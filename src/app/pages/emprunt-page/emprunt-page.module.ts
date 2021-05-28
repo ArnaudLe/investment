@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { EmpruntPageRoutingModule } from './emprunt-page-routing.module';
 import { EmpruntPageComponent } from './emprunt-page.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -20,6 +20,7 @@ import { MatSelectModule } from '@angular/material/select';
     declarations: [
         EmpruntPageComponent
     ],
+    exports: [EmpruntPageComponent],
     imports: [
         CommonModule,
         EmpruntPageRoutingModule,
@@ -29,7 +30,8 @@ import { MatSelectModule } from '@angular/material/select';
         FlexLayoutModule,
         MatCheckboxModule,
         MatRadioModule,
-        MatSelectModule
+        MatSelectModule,
+        FormsModule
     ]
 })
 export class EmpruntPageModule { }

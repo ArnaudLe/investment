@@ -6,54 +6,44 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './public/home/home.component';
-import { LoanComponent } from './features/loan/loan.component';
-import { MonthlyPaymentComponent } from './features/monthly-payment/monthly-payment.component';
-import { RealEstateSearchComponent } from './features/real-estate-search/real-estate-search.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './header/header.component';
 
-export const appRouteList: Routes = [
-  {
-      path: 'home',
-      component: HomeComponent
-  },
-  {
-      path: 'loan',
-      component: LoanComponent
-  },
-  {
-    path: 'monthly-payment',
-    component: MonthlyPaymentComponent
-  },
-  {
-    path: 'real-estate-search',
-    component: RealEstateSearchComponent
-  },
-  {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-      path: '**',
-      redirectTo: 'landing'
-  }
-];
+// export const appRouteList: Routes = [
+//   {
+//       path: 'home',
+//       component: HomeComponent
+//   },
+//   {
+//       path: 'loan',
+//       component: LoanComponent
+//   },
+//   {
+//     path: 'monthly-payment',
+//     component: MonthlyPaymentComponent
+//   },
+//   {
+//     path: 'real-estate-search',
+//     component: RealEstateSearchComponent
+//   },
+//   {
+//     path: '',
+//     redirectTo: '/home',
+//     pathMatch: 'full'
+//   },
+//   {
+//       path: '**',
+//       redirectTo: 'landing'
+//   }
+// ];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    LoanComponent,
-    MonthlyPaymentComponent,
-    RealEstateSearchComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule, 
-    RouterModule.forRoot(appRouteList),
+    // RouterModule.forRoot(appRouteList),
      BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule, AppRoutingModule
   ],
   providers: [],

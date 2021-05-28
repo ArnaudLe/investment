@@ -1,3 +1,4 @@
+import { HeaderModule } from './features/header/header.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -46,6 +47,7 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule, 
     // RouterModule.forRoot(appRouteList),
     AppRoutingModule,
+    HeaderModule,
     HomePageModule
   ],
   providers: [],

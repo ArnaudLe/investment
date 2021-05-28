@@ -7,10 +7,10 @@ export const routes: Routes = [
     path: '',
     component: HomePageComponent,
   },
-//   {
-//     path: '',
-//     loadChildren: () => import('./pages/home-page/home-page.module').then((m) => m.HomePageModule),
-//   },
+  {
+    path: 'emprunt',
+    loadChildren: () => import('./pages/emprunt-page/emprunt-page.module').then((m) => m.EmpruntPageModule),
+  },
 
 //   {
 //     path: 'home',

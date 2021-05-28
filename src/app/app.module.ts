@@ -8,8 +8,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // export const appRouteList: Routes = [
 //   {
@@ -45,6 +45,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule, 
+    BrowserAnimationsModule,
     // RouterModule.forRoot(appRouteList),
     AppRoutingModule,
     HeaderModule,

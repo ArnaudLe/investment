@@ -1,1 +1,37 @@
-<p>emprunt-page works!</p>
+<h1>Calculez votre capacité d'emprunt</h1>
+
+<mat-radio-group fxLayout="row" fxLayoutGap="1em">
+    <mat-label>Vous empruntez :</mat-label>
+    <mat-radio-button value="1">Seul(e)</mat-radio-button>
+    <mat-radio-button value="2">À deux</mat-radio-button>
+</mat-radio-group>
+
+<form fxLayout="column" fxLayoutGap="2em" [formGroup]="revenusForm">
+    <div fxLayout="row" fxLayoutGap="1em">
+        <mat-form-field appearance="fill">
+            <mat-label>Type de revenus</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let revenu of revenus" [value]="revenu">
+                    {{revenu}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="form-field" appearance="fill" floatLabel="always">
+            <mat-label>Salaire</mat-label>
+            <input matInput formControlName="salaire" placeholder="0">
+            <span matSuffix>€</span>
+            <mat-hint>Vos revenus de salaire avant prélèvement à la source</mat-hint>
+            <mat-error>Veuillez renseignez votre salaire. Seuls des chiffres et nombres sont autorisés (exemple : 2000)
+            </mat-error>
+        </mat-form-field>
+    </div>
+    
+    <mat-form-field class="form-field" appearance="fill" floatLabel="always">
+        <mat-label>Salaire</mat-label>
+        <input matInput formControlName="salaire" placeholder="0">
+        <span matSuffix>€</span>
+        <mat-hint>Vos revenus de salaire avant prélèvement à la source</mat-hint>
+        <mat-error>Veuillez renseignez votre salaire. Seuls des chiffres et nombres sont autorisés (exemple : 2000)
+        </mat-error>
+    </mat-form-field>
+</form>

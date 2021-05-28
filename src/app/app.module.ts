@@ -1,3 +1,4 @@
+import { HomePageModule } from './pages/home-page/home-page.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -44,7 +45,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule, 
     // RouterModule.forRoot(appRouteList),
-     BrowserAnimationsModule, MatTabsModule, MatButtonToggleModule, AppRoutingModule
+    AppRoutingModule,
+    HomePageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

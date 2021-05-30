@@ -1,12 +1,12 @@
 <h1>Calculez votre capacité d'emprunt</h1>
 
-<mat-radio-group fxLayout="row" fxLayoutGap="1em">
-    <mat-label>Vous empruntez :</mat-label>
-    <mat-radio-button value="1">Seul(e)</mat-radio-button>
-    <mat-radio-button value="2">À deux</mat-radio-button>
-</mat-radio-group>
-
 <form fxLayout="column" fxLayoutGap="2em" [formGroup]="revenusFormGroup">
+    <mat-radio-group fxLayout="row" fxLayoutGap="1em" formControlName="typeEmprunteur">
+        <mat-label>Vous empruntez :</mat-label>
+        <mat-radio-button value="1">Seul(e)</mat-radio-button>
+        <mat-radio-button value="2">À deux</mat-radio-button>
+    </mat-radio-group>
+
     <mat-form-field class="form-field" appearance="fill" floatLabel="always">
         <mat-label>Salaire</mat-label>
         <input matInput formControlName="salaire" placeholder="0">
@@ -16,41 +16,52 @@
         </mat-error>
     </mat-form-field>
 
-    <div fxLayout="row" fxLayoutGap="1em">
-        <mat-form-field appearance="fill">
-            <mat-label>Type de revenus</mat-label>
-            <mat-select formControlName="selectedRevenu">
-                <mat-option *ngFor="let revenu of revenusEnumList" [value]="revenu">
-                    {{revenu}}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+    <div formArrayName="autresRevenus" *ngFor="let revenu of autresRevenus['controls']; let i = index">
+        <div fxLayout="row" fxLayoutGap="1em" [formGroupName]="i">
+            <mat-form-field appearance="fill">
+                <mat-label>Type de revenus</mat-label>
+                <mat-select formControlName="selectedRevenu" #selected>
+                    <mat-option *ngFor="let revenuEnum of revenusEnumList" [value]="revenuEnum">
+                        {{revenuEnum}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
-        <mat-form-field *ngIf="selectedRevenu.value === revenusEnum.REVENU_LOCATIF" class="form-field" appearance="fill" floatLabel="always">
-            <mat-label>{{selectedRevenu.value}}</mat-label>
-            <input matInput formControlName="revenuLocatif" placeholder="0">
-            <span matSuffix>€</span>
-            <mat-hint>Vos revenus locatifs annuels charges comprises</mat-hint>
-            <mat-error>Veuillez renseignez vos revenus locatifs annuels. Seuls des chiffres et nombres sont autorisés (exemple : 10000)
-            </mat-error>
-        </mat-form-field>
+            <mat-form-field *ngIf="selected?.value === revenusEnum.REVENU_LOCATIF" class="form-field" appearance="fill"
+                floatLabel="always">
+                <mat-label>{{selected?.value}}</mat-label>
+                <input matInput formControlName="revenuLocatif" placeholder="0">
+                <span matSuffix>€</span>
+                <mat-hint>Vos revenus locatifs annuels charges comprises</mat-hint>
+                <mat-error>Veuillez renseignez vos revenus locatifs annuels. Seuls des chiffres et nombres sont
+                    autorisés (exemple : 10000)
+                </mat-error>
+            </mat-form-field>
 
-        <mat-form-field *ngIf="selectedRevenu.value === revenusEnum.PRIME" class="form-field" appearance="fill" floatLabel="always">
-            <mat-label>{{selectedRevenu.value}}</mat-label>
-            <input matInput formControlName="prime" placeholder="0">
-            <span matSuffix>€</span>
-            <mat-hint>Vos primes exceptionnelles annuelles</mat-hint>
-            <mat-error>Veuillez renseignez vos primes exceptionnelles annuelles. Seuls des chiffres et nombres sont autorisés (exemple : 1000)
-            </mat-error>
-        </mat-form-field>
+            <mat-form-field *ngIf="selected?.value === revenusEnum.PRIME" class="form-field" appearance="fill"
+                floatLabel="always">
+                <mat-label>{{selected?.value}}</mat-label>
+                <input matInput formControlName="prime" placeholder="0">
+                <span matSuffix>€</span>
+                <mat-hint>Vos primes exceptionnelles annuelles</mat-hint>
+                <mat-error>Veuillez renseignez vos primes exceptionnelles annuelles. Seuls des chiffres et nombres sont
+                    autorisés (exemple : 1000)
+                </mat-error>
+            </mat-form-field>
 
-        <mat-form-field *ngIf="selectedRevenu.value === revenusEnum.AUTRE" class="form-field" appearance="fill" floatLabel="always">
-            <mat-label>{{selectedRevenu.value}}</mat-label>
-            <input matInput formControlName="autre" placeholder="0">
-            <span matSuffix>€</span>
-            <mat-hint>Vos autres revenus annuels</mat-hint>
-            <mat-error>Veuillez renseignez vos autres revenus annuels. Seuls des chiffres et nombres sont autorisés (exemple : 1000)
-            </mat-error>
-        </mat-form-field>
+            <mat-form-field *ngIf="selected?.value === revenusEnum.AUTRE" class="form-field" appearance="fill"
+                floatLabel="always">
+                <mat-label>{{selected?.value}}</mat-label>
+                <input matInput formControlName="autre" placeholder="0">
+                <span matSuffix>€</span>
+                <mat-hint>Vos autres revenus annuels</mat-hint>
+                <mat-error>Veuillez renseignez vos autres revenus annuels. Seuls des chiffres et nombres sont autorisés
+                    (exemple : 1000)
+                </mat-error>
+            </mat-form-field>
+        </div>
     </div>
+
+    <button mat-flat-button color="primary" (click)="addAutreRevenu()">Ajouter un type de revenu</button>
+
 </form>

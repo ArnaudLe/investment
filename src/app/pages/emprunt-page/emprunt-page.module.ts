@@ -1,4 +1,3 @@
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,9 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
-
-
-
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -31,7 +28,8 @@ import { MatSelectModule } from '@angular/material/select';
         MatCheckboxModule,
         MatRadioModule,
         MatSelectModule,
-        FormsModule
+        FormsModule,
+        MatButtonModule
     ]
 })
 export class EmpruntPageModule { }

@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RevenusEnum } from './RevenusEnum';
 
 @Component({
     selector: 'app-emprunt-page',
     templateUrl: './emprunt-page.component.html',
-    styleUrls: ['./emprunt-page.component.scss']
+    styleUrls: ['./emprunt-page.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmpruntPageComponent implements OnInit {
     revenusFormGroup: FormGroup;
     digitRegex = "^[0-9]*$";
     revenusEnumList: RevenusEnum[];
     revenusEnum = RevenusEnum;
+    capacite: number;
 
     constructor(private formBuilder: FormBuilder) {
     }
@@ -27,6 +29,10 @@ export class EmpruntPageComponent implements OnInit {
     ngOnInit(): void {
         this.revenusEnumList = Object.values(RevenusEnum);
         this.revenusFormGroup = this.buildRevenusForm();
+
+        this.revenusFormGroup.get("salaire").valueChanges.subscribe(salaire => {
+            this.capacite = (salaire * (1/3)) * 300;
+        })
     }
 
     addAutreRevenu() {

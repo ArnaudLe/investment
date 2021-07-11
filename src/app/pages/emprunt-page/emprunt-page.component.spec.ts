@@ -1,13 +1,11 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
-import { EmpruntPageComponent } from './emprunt-page.component';
+import {EmpruntPageComponent} from './emprunt-page.component';
+import {NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 describe('EmpruntPageComponent', () => {
   let component: EmpruntPageComponent;
@@ -15,17 +13,10 @@ describe('EmpruntPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EmpruntPageComponent ],
-      imports: [MatFormFieldModule,
-        ReactiveFormsModule,
-        MatInputModule,
-        FlexLayoutModule,
-        MatCheckboxModule,
-        MatRadioModule,
-        MatSelectModule,
-        FormsModule]
+      declarations: [EmpruntPageComponent],
+      imports: [MatInputModule, MatRadioModule, MatSelectModule, ReactiveFormsModule, NoopAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -34,7 +25,13 @@ describe('EmpruntPageComponent', () => {
     fixture.detectChanges();
   });
 
+  test('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
   test('ngOnInit', () => {
+    component.ngOnInit();
+
     expect(component.revenusEnumList).toBeDefined();
     expect(component.revenusFormGroup).toBeDefined();
   });
